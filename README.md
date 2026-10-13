@@ -23,7 +23,7 @@ Aplicação web educacional para estudantes de Direito, com trilhas de aprendiza
 
 ### Pré-requisitos
 
-- Node.js 20+
+- Node.js 22.19+ (recomendado: 24 LTS)
 - npm 10+
 
 ### Instalação

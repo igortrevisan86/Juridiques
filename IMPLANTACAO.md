@@ -25,6 +25,7 @@ Conteúdo estático em TypeScript, progresso em `localStorage`, sem backend.
 ### Inicializador Windows — `iniciar.bat`
 
 - Verifica se `node` e `npm` estão no PATH (mensagem de erro clara caso contrário).
+- **Valida a versão mínima do Node (22.19+)** exigida pelas dependências de teste.
 - Instala dependências automaticamente se `node_modules` não existir.
 - Inicia `npm run dev`, abre o navegador em `http://localhost:5173`.
 - Encerre com `Ctrl+C`.
@@ -190,3 +191,57 @@ Cobertura dos testes de tema: chave `juridiques.theme.v1`; restauração da pref
 - Alternativa sem Actions: `npx gh-pages -d dist` (publica o `dist` já buildado na branch `gh-pages`; configure Pages para servir dessa branch).
 - O repositório precisa existir com o nome `Juridiques` (ou ajuste do `base` para o nome real do repositório).
 
+- O repositório precisa existir com o nome `Juridiques` (ou ajuste do `base` para o nome real do repositório).
+
+---
+
+## 6. Correção da falha do workflow no GitHub Actions (13/10/2026)
+
+### Sintoma
+
+```text
+TypeError: webidl.util.markAsUncloneable is not a function
+Error: [vitest-pool]: Failed to start forks worker
+```
+
+A etapa de `npm test` falhava no CI (afetando os 4 arquivos de teste), impedindo o build/deploy. `npm ci` e `npm run lint` passavam normalmente.
+
+### Causa-raiz (confirmada)
+
+| Fato | Detalhe |
+|---|---|
+| Node no CI | `node-version: 20` (via `actions/setup-node@v4`) |
+| Cadeia de dependências | `vitest@5` → `jsdom@30.1.2` → **`undici@8.11.2`** |
+| `engines` do undici 8.11.2 | `{"node": ">=22.19.0"}` |
+| Chamada que quebra | `undici/lib/web/webidl/index.js`: `require('node:worker_threads').markAsUncloneable` |
+
+`worker_threads.markAsUncloneable` **não existe no Node 20** (foi introduzida no linha 22). No CI, `markAsUncloneable` era `undefined`, atribuído a `webidl.util.markAsUncloneable`; ao invocá-lo, o undici lançava `TypeError ... is not a function`, derrubando o worker de forks do Vitest. Localmente os testes passavam porque o ambiente usava **Node 24.19.0**, que já possui a API.
+
+### Correções aplicadas
+
+| Arquivo | Mudança |
+|---|---|
+| `.github/workflows/deploy.yml` | `node-version: 20` → **`node-version: 24`** (LTS; satisfaz `>=22.19`) |
+| `package.json` | Adicionado `"engines": { "node": ">=22.19.0" }` — documenta e protege contra instalação em Node incompatível |
+| `iniciar.bat` | Agora valida a **versão mínima** do Node (22.19+) antes de instalar/iniciar, com mensagem clara |
+
+Nenhuma dependência foi alterada — o `package-lock.json` permanece consistente (o `undici@8.11.2` já estava correto; apenas o Node do CI é que era incompatível). Testes não foram desativados nem removidos.
+
+### Versão do Node recomendada
+
+**Node 24 LTS** (usada no CI e recomendada localmente). Mínimo absoluto: **22.19.0**, exigido pelo `undici@8` via `jsdom@30`.
+
+### Ordem do workflow (mantida)
+
+`npm ci` → `npm run lint` → `npm test` → `npm run build` → upload de `dist/`. O job `deploy` roda somente após `needs: build`, ou seja, só publica com build bem-sucedido.
+
+### Validação local executada (resultados reais — Node v24.19.0)
+
+| Comando | Resultado |
+|---|---|
+| `npm ci` | ✅ 147 pacotes instalados, **0 vulnerabilidades**, lockfile consistente |
+| `npm run lint` | ✅ 0 erros (1 warning pré-existente em `ProgressContext.tsx`) |
+| `npm test` | ✅ **37/37** — os 4 arquivos que falhavam no CI passaram: `theme.test.tsx` (11), `smoke.test.ts` (11), `markdown.test.ts` (8), `unlock.test.ts` (7) |
+| `npm run build` | ✅ `tsc -b` + `vite build`; `dist/index.html` referencia `/Juridiques/assets/*` |
+
+> Limitação: a execução no GitHub Actions em si não pôde ser reproduzida localmente (requer push). A correção de versão é determinística — o CI usará Node 24, mesma versão major deste ambiente validado. Após o push, acompanhe o resultado em **Actions → Deploy to GitHub Pages**.

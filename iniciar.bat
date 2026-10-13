@@ -16,8 +16,19 @@ where node >nul 2>nul
 if errorlevel 1 (
     echo  [ERRO] Node.js nao encontrado no PATH.
     echo.
-    echo  Instale o Node.js 20+ em https://nodejs.org e tente novamente.
-    echo  Apos instalar, feche e reabra este terminal.
+    echo  Instale o Node.js 22.19+ (recomendado: 24 LTS) em https://nodejs.org
+    echo  e tente novamente. Apos instalar, feche e reabra este terminal.
+    echo.
+    pause
+    exit /b 1
+)
+
+:: Verifica a versao minima do Node (22.19 — exigida pelo undici@8/jsdom@30)
+node -e "const [M,m]=process.versions.node.split('.').map(Number); if (M<22||(M===22&&m<19)) { console.log('  [ERRO] Node '+process.version+' encontrado. Exige-se 22.19+ (recomendado: 24 LTS).'); process.exit(1) }" 
+if errorlevel 1 (
+    echo.
+    echo  Instale uma versao compativel em https://nodejs.org
+    echo  e reabra este terminal apos a instalacao.
     echo.
     pause
     exit /b 1
@@ -28,7 +39,7 @@ where npm >nul 2>nul
 if errorlevel 1 (
     echo  [ERRO] npm nao encontrado no PATH.
     echo.
-    echo  O npm acompanha o Node.js. Reinstale o Node.js 20+ em https://nodejs.org
+    echo  O npm acompanha o Node.js. Reinstale o Node.js 22.19+ em https://nodejs.org
     echo.
     pause
     exit /b 1
