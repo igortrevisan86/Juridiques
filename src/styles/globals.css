@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN SYSTEM — Juridiquês
+   Paleta Elegante e Jurídica
+   - Marinho (navy):    elementos principais, marca, botões
+   - Violeta (plum):    gamificação (nível, sequência, conquistas)
+   - Turquesa (aqua):   progresso e sucesso
+   - Amarelo (gold):    XP e recompensas
+   - Vermelho (red):    erros e respostas incorretas
+   ============================================================ */
+
+@theme {
+  /* Azul-marinho — cor principal */
+  --color-navy-50:  #EEF2FB;
+  --color-navy-100: #D9E1F5;
+  --color-navy-200: #B4C3EB;
+  --color-navy-300: #8199D8;
+  --color-navy-400: #4C6BC0;
+  --color-navy-500: #2F4DA3;
+  --color-navy-600: #1E3A8A;
+  --color-navy-700: #1A3276;
+  --color-navy-800: #152860;
+  --color-navy-900: #101E4A;
+
+  /* Violeta — gamificação e destaques */
+  --color-plum-50:  #F5F1FE;
+  --color-plum-100: #E9E0FD;
+  --color-plum-200: #D4C3FB;
+  --color-plum-300: #B79CF6;
+  --color-plum-400: #9F7AF0;
+  --color-plum-500: #8B5CF6;
+  --color-plum-600: #7C4DE8;
+  --color-plum-700: #6D3FD1;
+  --color-plum-800: #5A32AC;
+  --color-plum-900: #482889;
+
+  /* Turquesa — progresso e sucesso */
+  --color-aqua-50:  #ECFBF8;
+  --color-aqua-100: #CFF5EF;
+  --color-aqua-200: #9FE9DE;
+  --color-aqua-300: #63D8C9;
+  --color-aqua-400: #2CC4B3;
+  --color-aqua-500: #14B8A6;
+  --color-aqua-600: #0E9A8C;
+  --color-aqua-700: #0B7D72;
+  --color-aqua-800: #09645C;
+  --color-aqua-900: #074F49;
+
+  /* Amarelo — XP e recompensas */
+  --color-gold-50:  #FFF8E6;
+  --color-gold-100: #FDEEC4;
+  --color-gold-200: #FBDD8A;
+  --color-gold-300: #F7C84F;
+  --color-gold-400: #EFB21E;
+  --color-gold-500: #E5A000;
+  --color-gold-600: #C68800;
+  --color-gold-700: #9E6D00;
+  --color-gold-800: #7A5400;
+  --color-gold-900: #5E4100;
+
+  /* Vermelho — erros (mapeia a escala padrão para o token do projeto) */
+  --color-red-50:  #FEF2F2;
+  --color-red-100: #FEE2E2;
+  --color-red-200: #FECACA;
+  --color-red-300: #FCA5A5;
+  --color-red-400: #F87171;
+  --color-red-500: #EF4444;
+  --color-red-600: #DC2626;
+  --color-red-700: #B91C1C;
+  --color-red-800: #991B1B;
+  --color-red-900: #7F1D1D;
+
+  /* Superfície tematizável (utility bg-card) — usada onde existia bg-white */
+  --color-card: #FFFFFF;
+}
+
+@layer base {
+  :root {
+    /* Aliases de marca (usados por componentes via var()) */
+    --color-brand-navy:    #1E3A8A;
+    --color-brand-plum:    #8B5CF6;
+    --color-brand-aqua:    #14B8A6;
+    --color-brand-gold:    #E5A000;
+    --color-brand-red:     #DC2626;
+    /* Compatível com a nomenclatura anterior */
+    --color-brand-blue:    #1E3A8A;
+    --color-brand-purple:  #8B5CF6;
+    --color-brand-green:   #14B8A6;
+    --color-brand-yellow:  #E5A000;
+
+    --color-bg-primary:   #F8FAFC;
+    --color-bg-card:      #FFFFFF;
+    --color-bg-muted:     #F1F5F9;
+
+    --color-text-primary: #0F172A;
+    --color-text-muted:   #64748B;
+    --color-text-inverse: #FFFFFF;
+
+    --color-border:       #E2E8F0;
+    --color-border-focus: #1E3A8A;
+
+    --radius-sm:   0.375rem;
+    --radius-md:   0.75rem;
+    --radius-lg:   1rem;
+    --radius-xl:   1.5rem;
+    --radius-full: 9999px;
+
+    --shadow-card: 0 1px 3px rgba(16,30,74,.06), 0 4px 16px rgba(16,30,74,.05);
+    --shadow-hover: 0 4px 24px rgba(16,30,74,.13);
+
+    /* Gradientes de marca (tiles do cabeçalho e do nível) */
+    --grad-brand-from: #2F4DA3;
+    --grad-brand-to:   #1A3276;
+    --grad-level-from: #8B5CF6;
+    --grad-level-to:   #6D3FD1;
+
+    /* Estados de botão independentes da escala de texto */
+    --btn-primary-hover: #1A3276;
+    --btn-danger-hover:  #B91C1C;
+    --btn-success-hover: #0B7D72;
+    --btn-success-ink:   #FFFFFF;
+  }
+
+  /* ============================================================
+     MODO ESCURO — sobrescreve os mesmos tokens.
+     As utilities do Tailwind 4 e as classes de componente
+     referenciam var(), então nenhum componente é duplicado.
+     ============================================================ */
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+
+    --color-bg-primary:   #0F172A;
+    --color-bg-card:      #1E293B;
+    --color-bg-muted:     #273449;
+    --color-card:         #1E293B;
+
+    --color-text-primary: #F8FAFC;
+    --color-text-muted:   #CBD5E1;
+    --color-border:       #334155;
+    --color-border-focus: #8B5CF6;
+
+    --color-brand-navy:   #3B5BC0;
+    --color-brand-plum:   #7C3AED;
+    --color-brand-aqua:   #06B6D4;
+    --color-brand-gold:   #FACC15;
+    --color-brand-red:    #DC2626;
+    --color-brand-blue:   #3B5BC0;
+    --color-brand-purple: #7C3AED;
+    --color-brand-green:  #06B6D4;
+    --color-brand-yellow: #FACC15;
+
+    --grad-brand-from: #4C6BC0;
+    --grad-brand-to:   #2F4DA3;
+    --grad-level-from: #7C3AED;
+    --grad-level-to:   #5B21B6;
+
+    --btn-primary-hover: #5273D6;
+    --btn-danger-hover:  #B91C1C;
+    --btn-success-hover: #0891A5;
+    --btn-success-ink:   #052E2B;
+
+    --shadow-card:  0 1px 3px rgba(0,0,0,.35), 0 4px 16px rgba(0,0,0,.25);
+    --shadow-hover: 0 4px 24px rgba(0,0,0,.45);
+
+    /* Escala navy (marinho adaptado ao escuro) */
+    --color-navy-50:  #1A2E5C;
+    --color-navy-100: #223A72;
+    --color-navy-200: #2C4A8F;
+    --color-navy-300: #3B5FB8;
+    --color-navy-400: #5B7FD6;
+    --color-navy-500: #6B8FE3;
+    --color-navy-600: #3B5BC0;
+    --color-navy-700: #93A9EC;
+    --color-navy-800: #B3C4F3;
+    --color-navy-900: #DCE4FB;
+
+    /* Escala plum (violeta — gamificação) */
+    --color-plum-50:  #2A1B52;
+    --color-plum-100: #342364;
+    --color-plum-200: #4C3494;
+    --color-plum-300: #6D4FE0;
+    --color-plum-400: #7C3AED;
+    --color-plum-500: #8B5CF6;
+    --color-plum-600: #9F7AFA;
+    --color-plum-700: #C4B5FD;
+    --color-plum-800: #DDD6FE;
+    --color-plum-900: #EDE9FE;
+
+    /* Escala aqua (ciano — progresso e sucesso) */
+    --color-aqua-50:  #052E33;
+    --color-aqua-100: #073E47;
+    --color-aqua-200: #0B5561;
+    --color-aqua-300: #0E7C8C;
+    --color-aqua-400: #0891A5;
+    --color-aqua-500: #06B6D4;
+    --color-aqua-600: #22D3EE;
+    --color-aqua-700: #67E8F9;
+    --color-aqua-800: #A5F3FC;
+    --color-aqua-900: #CFFAFE;
+
+    /* Escala gold (amarelo — XP e recompensas) */
+    --color-gold-50:  #2F2605;
+    --color-gold-100: #3D3107;
+    --color-gold-200: #55440A;
+    --color-gold-300: #8A6D10;
+    --color-gold-400: #C29A12;
+    --color-gold-500: #FACC15;
+    --color-gold-600: #FDE047;
+    --color-gold-700: #FDE68A;
+    --color-gold-800: #FEF3C7;
+    --color-gold-900: #FEF9E7;
+
+    /* Escala red (erros legíveis sobre fundo escuro) */
+    --color-red-50:  #2E1315;
+    --color-red-100: #45161A;
+    --color-red-200: #7F1D1D;
+    --color-red-300: #B91C1C;
+    --color-red-400: #F87171;
+    --color-red-500: #EF4444;
+    --color-red-600: #F87171;
+    --color-red-700: #FCA5A5;
+    --color-red-800: #FECACA;
+    --color-red-900: #FFE4E6;
+
+    /* Escala gray do Tailwind reconfigurada para superfícies escuras */
+    --color-gray-50:  #162033;
+    --color-gray-100: #273449;
+    --color-gray-200: #334155;
+    --color-gray-300: #475569;
+    --color-gray-400: #94A3B8;
+    --color-gray-500: #CBD5E1;
+    --color-gray-600: #CBD5E1;
+    --color-gray-700: #E2E8F0;
+    --color-gray-800: #F1F5F9;
+    --color-gray-900: #F8FAFC;
+  }
+
+  html, body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Foco visível para acessibilidade via teclado */
+  :focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Scrollbar customizada */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+  /* Respeita preferência de movimento reduzido */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Transição suave ao trocar de tema (desligada por reduced-motion) */
+  html {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Scrollbar adaptada ao modo escuro */
+  :root[data-theme='dark'] ::-webkit-scrollbar-thumb { background: #475569; }
+  :root[data-theme='dark'] ::-webkit-scrollbar-thumb:hover { background: #64748B; }
+}
+
+
+@layer components {
+  /* Cartões */
+  .card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--color-border);
+    transition: box-shadow 0.2s ease, transform 0.15s ease,
+      background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Botões */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: all 0.15s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    line-height: 1.25;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+  .btn-primary {
+    background: var(--color-brand-navy);
+    color: var(--color-text-inverse);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--btn-primary-hover);
+    box-shadow: 0 4px 16px rgba(30,58,138,.35);
+  }
+
+  .btn-success {
+    background: var(--color-brand-aqua);
+    color: var(--btn-success-ink);
+  }
+  .btn-success:hover:not(:disabled) {
+    background: var(--btn-success-hover);
+    box-shadow: 0 4px 16px rgba(20,184,166,.35);
+  }
+
+  .btn-secondary {
+    background: var(--color-bg-muted);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--color-border);
+    border-color: var(--color-navy-200);
+  }
+
+  .btn-danger {
+    background: var(--color-brand-red);
+    color: var(--color-text-inverse);
+  }
+  .btn-danger:hover:not(:disabled) {
+    background: var(--btn-danger-hover);
+    box-shadow: 0 4px 16px rgba(220,38,38,.35);
+  }
+
+  /* Gradientes de marca (tiles) — usam os tokens --grad-* por tema */
+  .bg-grad-brand {
+    background-image: linear-gradient(135deg, var(--grad-brand-from), var(--grad-brand-to));
+  }
+  .bg-grad-level {
+    background-image: linear-gradient(135deg, var(--grad-level-from), var(--grad-level-to));
+  }
+
+  /* Barra de progresso */
+  .progress-bar-track {
+    background: var(--color-bg-muted);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    height: 8px;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-brand-aqua);
+  }
+
+  /* Badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  /* Animações de resposta */
+  .answer-correct {
+    animation: pulse-correct 0.4s ease;
+  }
+  .answer-wrong {
+    animation: shake-wrong 0.4s ease;
+  }
+
+  @keyframes pulse-correct {
+    0%  { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100%{ transform: scale(1); }
+  }
+
+  @keyframes shake-wrong {
+    0%, 100% { transform: translateX(0); }
+    20%       { transform: translateX(-6px); }
+    40%       { transform: translateX(6px); }
+    60%       { transform: translateX(-4px); }
+    80%       { transform: translateX(4px); }
+  }
+
+  /* Animação de entrada */
+  .fade-in {
+    animation: fade-in 0.3s ease;
+  }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Confetti / celebração */
+  .celebrate {
+    animation: celebrate 0.5s ease;
+  }
+  @keyframes celebrate {
+    0%   { transform: scale(1) rotate(0deg); }
+    30%  { transform: scale(1.15) rotate(-3deg); }
+    60%  { transform: scale(1.1) rotate(3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+}
