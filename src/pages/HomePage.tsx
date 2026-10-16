@@ -10,7 +10,6 @@ import {
   Award,
   BookOpenCheck,
   Flame,
-  Languages,
   PlayCircle,
   RotateCcw,
   Target,
@@ -90,7 +89,6 @@ export function HomePage() {
       {/* ===== Cartão principal ===== */}
       <section className="card p-6 sm:p-8 border-2 border-navy-200 bg-gradient-to-br from-navy-50/70 via-card to-plum-50/50">
         <span className="badge bg-plum-100 text-plum-700 mb-3">
-          <Languages size={14} />
           Experiência principal
         </span>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-navy-900">

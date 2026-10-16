@@ -4,7 +4,7 @@
 // ============================================================
 
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Languages, PlayCircle, RotateCcw } from 'lucide-react'
+import { ArrowLeft, PlayCircle, RotateCcw } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { getVocabLessons, getVocabTrail, getVocabUnits, getPalavraById } from '@/features/vocab/catalog'
 import { getNextLesson, getTrailCompletedCount } from '@/utils/unlock'
@@ -42,7 +42,6 @@ export function VocabPage() {
             className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0 shadow-md"
             style={{ background: `linear-gradient(135deg, ${trail.color}, ${trail.color}dd)` }}
           >
-            <Languages size={28} className="text-white" />
           </div>
           <div className="flex-1 min-w-0">
             <h1 className="text-xl font-extrabold text-gray-900">

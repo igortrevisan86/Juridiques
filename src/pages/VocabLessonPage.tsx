@@ -9,7 +9,6 @@ import {
   ArrowLeft,
   ArrowRight,
   BookOpenCheck,
-  Languages,
   Lock,
   PlayCircle,
   RotateCcw,
@@ -287,7 +286,6 @@ function VocabLessonView({ lessonId }: { lessonId?: string }) {
 
       <section>
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-          <Languages size={14} />
           {isReview ? 'Sessão de revisão' : 'Lição de vocabulário'}
         </div>
         <h1 className="text-2xl font-extrabold text-navy-900 mt-1">{lesson.title}</h1>

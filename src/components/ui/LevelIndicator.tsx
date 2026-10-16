@@ -3,7 +3,6 @@
 // Nível = XP + 25 pts por palavra dominada (ver utils/xp.ts).
 // ============================================================
 
-import { Shield } from 'lucide-react'
 import { getLevelState } from '@/utils/xp'
 import { ProgressBar } from './ProgressBar'
 
@@ -23,7 +22,6 @@ export function LevelIndicator({ xp, masteredWords = 0, compact = false }: Level
         className="inline-flex items-center gap-1.5 text-sm font-bold text-plum-700 bg-plum-100 rounded-full px-3 py-1 whitespace-nowrap"
         aria-label={`Nível ${state.level.level}: ${state.level.title}`}
       >
-        <Shield size={16} className="text-plum-500 shrink-0" />
         Nv. {state.level.level}
       </span>
     )

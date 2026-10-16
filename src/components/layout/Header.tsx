@@ -5,7 +5,7 @@
 // ============================================================
 
 import { Link, NavLink } from 'react-router-dom'
-import { Languages, RotateCcw, Scale } from 'lucide-react'
+import { RotateCcw, Scale } from 'lucide-react'
 import { useProgress } from '@/hooks/useProgress'
 import { getPalavraById } from '@/features/vocab/catalog'
 import { getMasteredCount } from '@/features/vocab/mastery'
@@ -31,7 +31,6 @@ function NavItems({ reviewCount }: { reviewCount: number }) {
         Início
       </NavLink>
       <NavLink to="/vocabulario" className={navLinkClass}>
-        <Languages size={15} />
         Palavras
       </NavLink>
       <Link to="/?ir=explorar-direito" className={PASSIVE_LINK_CLASS}>
