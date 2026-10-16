@@ -10,6 +10,9 @@ import { HomePage } from '@/pages/HomePage'
 import { TrailPage } from '@/pages/TrailPage'
 import { LessonPage } from '@/pages/LessonPage'
 import { ResultPage } from '@/pages/ResultPage'
+import { VocabPage } from '@/pages/VocabPage'
+import { VocabLessonPage } from '@/pages/VocabLessonPage'
+import { ReviewPage } from '@/pages/ReviewPage'
 
 export function App() {
   return (
@@ -20,6 +23,11 @@ export function App() {
           <Routes>
             <Route element={<AppLayout />}>
               <Route path="/" element={<HomePage />} />
+              {/* Vocabulário — experiência principal */}
+              <Route path="/vocabulario" element={<VocabPage />} />
+              <Route path="/vocabulario/:lessonId" element={<VocabLessonPage />} />
+              <Route path="/revisao" element={<ReviewPage />} />
+              {/* Explorar o Direito — conteúdo complementar (preservado) */}
               <Route path="/trilha/:trailId" element={<TrailPage />} />
               <Route path="/licao/:lessonId" element={<LessonPage />} />
               <Route path="/licao/:lessonId/resultado" element={<ResultPage />} />

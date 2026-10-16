@@ -16,14 +16,14 @@ where node >nul 2>nul
 if errorlevel 1 (
     echo  [ERRO] Node.js nao encontrado no PATH.
     echo.
-    echo  Instale o Node.js 22.19+ (recomendado: 24 LTS) em https://nodejs.org
+    echo  Instale o Node.js 22.19+ - recomendado: 24 LTS - em https://nodejs.org
     echo  e tente novamente. Apos instalar, feche e reabra este terminal.
     echo.
     pause
     exit /b 1
 )
 
-:: Verifica a versao minima do Node (22.19 — exigida pelo undici@8/jsdom@30)
+:: Verifica a versao minima do Node (22.19 - exigida pelo undici@8/jsdom@30)
 node -e "const [M,m]=process.versions.node.split('.').map(Number); if (M<22||(M===22&&m<19)) { console.log('  [ERRO] Node '+process.version+' encontrado. Exige-se 22.19+ (recomendado: 24 LTS).'); process.exit(1) }" 
 if errorlevel 1 (
     echo.

@@ -12,7 +12,7 @@ import {
 import type { Lesson, LessonStatus } from '@/types'
 
 interface LessonNodeProps {
-  lesson: Lesson
+  lesson: Pick<Lesson, 'id' | 'order' | 'title' | 'description'>
   status: LessonStatus
   trailColor: string
 }

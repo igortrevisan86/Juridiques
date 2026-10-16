@@ -9,7 +9,7 @@ import type { Trail, Lesson, LessonStatus, UserProgress } from '@/types'
  * Nunca usa classes CSS ou estado visual como fonte de verdade.
  */
 export function getLessonStatus(
-  lesson: Lesson,
+  lesson: Pick<Lesson, 'id'>,
   trail: Trail,
   progress: UserProgress,
 ): LessonStatus {
@@ -43,7 +43,7 @@ export function getLessonStatus(
  */
 export function getTrailLessonStatuses(
   trail: Trail,
-  lessons: Lesson[],
+  lessons: Pick<Lesson, 'id'>[],
   progress: UserProgress,
 ): Record<string, LessonStatus> {
   const result: Record<string, LessonStatus> = {}
@@ -59,11 +59,11 @@ export function getTrailLessonStatuses(
 /**
  * Retorna a próxima lição disponível ou em andamento de uma trilha.
  */
-export function getNextLesson(
+export function getNextLesson<T extends Pick<Lesson, 'id'>>(
   trail: Trail,
-  lessons: Lesson[],
+  lessons: T[],
   progress: UserProgress,
-): Lesson | null {
+): T | null {
   const statuses = getTrailLessonStatuses(trail, lessons, progress)
   for (const id of trail.lessonIds) {
     const status = statuses[id]

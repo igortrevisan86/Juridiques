@@ -6,8 +6,11 @@ import { useState } from 'react'
 import { CheckCircle2, XCircle, ArrowRight } from 'lucide-react'
 import type { Question } from '@/types'
 
+/** Campos usados pela view — permite questões de vocabulário além das estáticas. */
+type QuestionData = Pick<Question, 'id' | 'stem' | 'options' | 'correctOptionId' | 'explanation'>
+
 interface QuestionViewProps {
-  question: Question
+  question: QuestionData
   questionIndex: number
   totalQuestions: number
   /** ID da alternativa já confirmada (null se ainda não respondida) */

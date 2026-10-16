@@ -1,0 +1,1218 @@
+[
+  {
+    "id": "anuencia",
+    "palavra": "Anuência",
+    "sinonimo": "Concordância",
+    "explicacao": "Anuência é consentimento ou aprovação em relação a algo.",
+    "categoria": "Termos gerais",
+    "contexto": "Consentimento"
+  },
+  {
+    "id": "litigio",
+    "palavra": "Litígio",
+    "sinonimo": "Disputa",
+    "explicacao": "Litígio é uma disputa ou controvérsia entre partes, frequentemente submetida ao Judiciário.",
+    "categoria": "Processo civil",
+    "contexto": "Disputa entre partes"
+  },
+  {
+    "id": "deferimento",
+    "palavra": "Deferimento",
+    "sinonimo": "Aprovação",
+    "explicacao": "Deferir um pedido significa acolhê-lo ou concedê-lo.",
+    "categoria": "Processo",
+    "contexto": "Pedido acolhido"
+  },
+  {
+    "id": "indeferimento",
+    "palavra": "Indeferimento",
+    "sinonimo": "Rejeição",
+    "explicacao": "Indeferir um pedido significa não o acolher.",
+    "categoria": "Processo",
+    "contexto": "Pedido rejeitado"
+  },
+  {
+    "id": "outorga",
+    "palavra": "Outorga",
+    "sinonimo": "Concessão formal",
+    "explicacao": "Outorga é o ato de conceder ou conferir formalmente um direito, poder ou autorização.",
+    "categoria": "Termos gerais",
+    "contexto": "Concessão formal"
+  },
+  {
+    "id": "impugnacao",
+    "palavra": "Impugnação",
+    "sinonimo": "Contestação",
+    "explicacao": "Impugnar é questionar ou contestar algo, conforme o contexto.",
+    "categoria": "Processo",
+    "contexto": "Questionamento formal"
+  },
+  {
+    "id": "contenda",
+    "palavra": "Contenda",
+    "sinonimo": "Rixa",
+    "explicacao": "Contenda é uma disputa ou desavença entre pessoas ou partes; “rixa” é uma aproximação lexical e pode soar mais informal.",
+    "categoria": "Termos gerais",
+    "contexto": "Conflito"
+  },
+  {
+    "id": "controversia",
+    "palavra": "Controvérsia",
+    "sinonimo": "Divergência",
+    "explicacao": "Controvérsia é uma questão sobre a qual há posições diferentes.",
+    "categoria": "Termos gerais",
+    "contexto": "Divergência de entendimento"
+  },
+  {
+    "id": "pleito",
+    "palavra": "Pleito",
+    "sinonimo": "Pretensão",
+    "explicacao": "Em contexto jurídico, pleito pode ser o pedido ou a pretensão apresentada por uma parte.",
+    "categoria": "Processo",
+    "contexto": "Pedido ou pretensão"
+  },
+  {
+    "id": "alegacao",
+    "palavra": "Alegação",
+    "sinonimo": "Afirmação",
+    "explicacao": "Alegação é uma afirmação apresentada por uma parte, que pode precisar ser demonstrada conforme o caso.",
+    "categoria": "Processo",
+    "contexto": "Afirmação de uma parte"
+  },
+  {
+    "id": "requerimento",
+    "palavra": "Requerimento",
+    "sinonimo": "Solicitação",
+    "explicacao": "Requerimento é um pedido formal dirigido a uma autoridade ou instituição.",
+    "categoria": "Termos gerais",
+    "contexto": "Pedido formal"
+  },
+  {
+    "id": "anuir",
+    "palavra": "Anuir",
+    "sinonimo": "Concordar",
+    "explicacao": "Anuir significa dar consentimento ou manifestar concordância.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Consentir"
+  },
+  {
+    "id": "obstar",
+    "palavra": "Obstar",
+    "sinonimo": "Impedir",
+    "explicacao": "Obstar significa criar obstáculo ou impedir que algo aconteça.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Impedir ou dificultar"
+  },
+  {
+    "id": "dirimir",
+    "palavra": "Dirimir",
+    "sinonimo": "Resolver",
+    "explicacao": "Dirimir uma controvérsia é solucioná-la ou pôr fim à divergência.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Resolver controvérsia"
+  },
+  {
+    "id": "rescindir",
+    "palavra": "Rescindir",
+    "sinonimo": "Desfazer",
+    "explicacao": "Rescindir é desfazer ou extinguir um vínculo ou negócio jurídico nas hipóteses aplicáveis.",
+    "categoria": "Direito civil",
+    "contexto": "Desfazimento de vínculo"
+  },
+  {
+    "id": "ratificar",
+    "palavra": "Ratificar",
+    "sinonimo": "Confirmar",
+    "explicacao": "Ratificar é confirmar ou validar formalmente um ato ou entendimento.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Confirmação formal"
+  },
+  {
+    "id": "retificar",
+    "palavra": "Retificar",
+    "sinonimo": "Corrigir",
+    "explicacao": "Retificar é corrigir uma informação, declaração ou registro.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Correção de informação"
+  },
+  {
+    "id": "cominacao",
+    "palavra": "Cominação",
+    "sinonimo": "Penalidade prevista",
+    "explicacao": "Cominação é a previsão de uma consequência jurídica para determinada conduta.",
+    "categoria": "Termos gerais",
+    "contexto": "Previsão de consequência jurídica"
+  },
+  {
+    "id": "sancao",
+    "palavra": "Sanção",
+    "sinonimo": "Penalidade",
+    "explicacao": "Sanção é uma consequência prevista pelo ordenamento para determinada conduta.",
+    "categoria": "Termos gerais",
+    "contexto": "Consequência jurídica"
+  },
+  {
+    "id": "onus",
+    "palavra": "Ônus",
+    "sinonimo": "Encargo",
+    "explicacao": "Ônus é uma obrigação, responsabilidade ou encargo atribuído a alguém, conforme o contexto.",
+    "categoria": "Termos gerais",
+    "contexto": "Responsabilidade"
+  },
+  {
+    "id": "pecuniario",
+    "palavra": "Pecuniário",
+    "sinonimo": "Monetário",
+    "explicacao": "Pecuniário é aquilo que se refere a dinheiro ou valores financeiros.",
+    "categoria": "Termos gerais",
+    "contexto": "Relacionado a dinheiro"
+  },
+  {
+    "id": "oneroso",
+    "palavra": "Oneroso",
+    "sinonimo": "Que envolve custos",
+    "explicacao": "Oneroso é aquilo que envolve ônus, custos ou encargos. Em contratos, “contrato oneroso” tem sentido técnico específico.",
+    "categoria": "Direito civil",
+    "contexto": "Que envolve custos ou encargos"
+  },
+  {
+    "id": "idoneo",
+    "palavra": "Idôneo",
+    "sinonimo": "Apto",
+    "explicacao": "Idôneo é quem ou aquilo que é adequado, capaz ou confiável para determinada finalidade.",
+    "categoria": "Termos gerais",
+    "contexto": "Aptidão"
+  },
+  {
+    "id": "incontroverso",
+    "palavra": "Incontroverso",
+    "sinonimo": "Indiscutível",
+    "explicacao": "Incontroverso é aquilo que não está em discussão entre as partes, naquele contexto.",
+    "categoria": "Processo",
+    "contexto": "Ponto não discutido"
+  },
+  {
+    "id": "verossimil",
+    "palavra": "Verossímil",
+    "sinonimo": "Plausível",
+    "explicacao": "Verossímil é aquilo que parece verdadeiro, sem significar necessariamente que esteja provado.",
+    "categoria": "Processo",
+    "contexto": "Aparência de verdade"
+  },
+  {
+    "id": "expresso",
+    "palavra": "Expresso",
+    "sinonimo": "Explícito",
+    "explicacao": "Expresso é aquilo que está declarado de maneira direta ou clara.",
+    "categoria": "Termos gerais",
+    "contexto": "Declaração direta"
+  },
+  {
+    "id": "tacito",
+    "palavra": "Tácito",
+    "sinonimo": "Implícito",
+    "explicacao": "Tácito é aquilo que se deduz de condutas ou circunstâncias, quando o contexto permite essa interpretação.",
+    "categoria": "Termos gerais",
+    "contexto": "Manifestação não expressa"
+  },
+  {
+    "id": "presumir",
+    "palavra": "Presumir",
+    "sinonimo": "Inferir",
+    "explicacao": "Presumir é concluir ou considerar algo provável com base em uma regra ou em indícios.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Conclusão baseada em regra ou indícios"
+  },
+  {
+    "id": "diligencia",
+    "palavra": "Diligência",
+    "sinonimo": "Providência",
+    "explicacao": "Diligência é uma medida adotada para cumprir uma finalidade, especialmente em procedimentos oficiais.",
+    "categoria": "Processo",
+    "contexto": "Medida procedimental"
+  },
+  {
+    "id": "notorio",
+    "palavra": "Notório",
+    "sinonimo": "Conhecido",
+    "explicacao": "Notório é aquilo que é amplamente conhecido ou evidente no contexto considerado.",
+    "categoria": "Termos gerais",
+    "contexto": "Fato amplamente conhecido"
+  },
+  {
+    "id": "incumbencia",
+    "palavra": "Incumbência",
+    "sinonimo": "Responsabilidade",
+    "explicacao": "Incumbência é uma tarefa ou responsabilidade atribuída a alguém.",
+    "categoria": "Termos gerais",
+    "contexto": "Dever atribuído"
+  },
+  {
+    "id": "vedacao",
+    "palavra": "Vedação",
+    "sinonimo": "Proibição",
+    "explicacao": "Vedação é uma proibição ou impedimento estabelecido por regra ou norma.",
+    "categoria": "Termos gerais",
+    "contexto": "Proibição normativa"
+  },
+  {
+    "id": "permissao",
+    "palavra": "Permissão",
+    "sinonimo": "Autorização",
+    "explicacao": "Permissão é o consentimento ou autorização para realizar algo.",
+    "categoria": "Termos gerais",
+    "contexto": "Ato autorizado"
+  },
+  {
+    "id": "contendor",
+    "palavra": "Contendor",
+    "sinonimo": "Oponente",
+    "explicacao": "Contendor é quem disputa ou se opõe a outra parte.",
+    "categoria": "Termos gerais",
+    "contexto": "Pessoa que disputa"
+  },
+  {
+    "id": "exordial",
+    "palavra": "Exordial",
+    "sinonimo": "Inicial",
+    "explicacao": "Exordial é aquilo que dá início; em processo, pode referir-se à petição inicial.",
+    "categoria": "Processo",
+    "contexto": "Ato inicial"
+  },
+  {
+    "id": "postular",
+    "palavra": "Postular",
+    "sinonimo": "Requerer",
+    "explicacao": "Postular é formular um pedido ou pretensão perante uma autoridade, especialmente em juízo.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Apresentar pedido"
+  },
+  {
+    "id": "pleitear",
+    "palavra": "Pleitear",
+    "sinonimo": "Reivindicar",
+    "explicacao": "Pleitear é pedir, buscar ou reivindicar algo formalmente.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Buscar reconhecimento de direito"
+  },
+  {
+    "id": "aquiescencia",
+    "palavra": "Aquiescência",
+    "sinonimo": "Consentimento",
+    "explicacao": "Aquiescência é a concordância ou aceitação de uma situação ou proposta.",
+    "categoria": "Termos gerais",
+    "contexto": "Aceitação"
+  },
+  {
+    "id": "dissidio",
+    "palavra": "Dissídio",
+    "sinonimo": "Conflito",
+    "explicacao": "Dissídio é uma divergência ou conflito; no direito do trabalho, também possui significado técnico específico.",
+    "categoria": "Termos gerais",
+    "contexto": "Divergência"
+  },
+  {
+    "id": "concessao",
+    "palavra": "Concessão",
+    "sinonimo": "Atribuição",
+    "explicacao": "Concessão é o ato de conceder ou atribuir algo; em direito público, o termo pode ter significado técnico específico.",
+    "categoria": "Termos gerais",
+    "contexto": "Ato de conceder"
+  },
+  {
+    "id": "eximir",
+    "palavra": "Eximir",
+    "sinonimo": "Desobrigar",
+    "explicacao": "Eximir significa dispensar alguém de uma obrigação ou responsabilidade, quando juridicamente cabível.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Dispensa de obrigação"
+  },
+  {
+    "id": "morosidade",
+    "palavra": "Morosidade",
+    "sinonimo": "Lentidão",
+    "explicacao": "Morosidade é a demora ou lentidão na realização de uma atividade ou procedimento.",
+    "categoria": "Termos gerais",
+    "contexto": "Demora"
+  },
+  {
+    "id": "celeridade",
+    "palavra": "Celeridade",
+    "sinonimo": "Rapidez",
+    "explicacao": "Celeridade é rapidez ou agilidade; no processo, relaciona-se à duração razoável dos procedimentos.",
+    "categoria": "Termos gerais",
+    "contexto": "Rapidez"
+  },
+  {
+    "id": "ilicito",
+    "palavra": "Ilícito",
+    "sinonimo": "Ilegal",
+    "explicacao": "Ilícito é aquilo que contraria o direito ou uma norma aplicável.",
+    "categoria": "Termos gerais",
+    "contexto": "Conduta contrária ao direito"
+  },
+  {
+    "id": "licito",
+    "palavra": "Lícito",
+    "sinonimo": "Legal",
+    "explicacao": "Lícito é aquilo permitido ou não proibido pelo ordenamento jurídico, conforme as regras aplicáveis.",
+    "categoria": "Termos gerais",
+    "contexto": "Conduta permitida"
+  },
+  {
+    "id": "respaldo",
+    "palavra": "Respaldo",
+    "sinonimo": "Apoio",
+    "explicacao": "Respaldo é suporte ou fundamento que dá sustentação a uma posição ou decisão.",
+    "categoria": "Termos gerais",
+    "contexto": "Suporte"
+  },
+  {
+    "id": "fundamento",
+    "palavra": "Fundamento",
+    "sinonimo": "Base",
+    "explicacao": "Fundamento é a razão ou base que sustenta uma decisão, argumento ou pretensão.",
+    "categoria": "Termos gerais",
+    "contexto": "Razão que sustenta"
+  },
+  {
+    "id": "pertinente",
+    "palavra": "Pertinente",
+    "sinonimo": "Relevante",
+    "explicacao": "Pertinente é aquilo que tem relação com o assunto ou é apropriado ao contexto.",
+    "categoria": "Termos gerais",
+    "contexto": "Relação com o tema"
+  },
+  {
+    "id": "inexoravel",
+    "palavra": "Inexorável",
+    "sinonimo": "Inevitável",
+    "explicacao": "Inexorável é aquilo que não pode ser evitado ou impedido, conforme o uso da palavra.",
+    "categoria": "Termos gerais",
+    "contexto": "Aquilo que não se pode evitar"
+  },
+  {
+    "id": "revés",
+    "palavra": "Revés",
+    "sinonimo": "Derrota",
+    "explicacao": "Revés é um resultado desfavorável; pode descrever uma derrota em uma disputa.",
+    "categoria": "Termos gerais",
+    "contexto": "Resultado desfavorável"
+  },
+  {
+    "id": "inibir",
+    "palavra": "Inibir",
+    "sinonimo": "Conter",
+    "explicacao": "Inibir é conter ou restringir uma ação; não equivale necessariamente a impedir por completo.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Conter ou restringir"
+  },
+  {
+    "id": "ab-rogar",
+    "palavra": "Ab-rogar",
+    "sinonimo": "Revogar",
+    "explicacao": "Ab-rogar é revogar ou abolir formalmente uma norma.",
+    "categoria": "Termos normativos",
+    "contexto": "Abolição de norma"
+  },
+  {
+    "id": "aditamento",
+    "palavra": "Aditamento",
+    "sinonimo": "Acréscimo",
+    "explicacao": "Aditamento é a inclusão de algo adicional em um documento ou ato.",
+    "categoria": "Termos gerais",
+    "contexto": "Inclusão adicional"
+  },
+  {
+    "id": "adimplir",
+    "palavra": "Adimplir",
+    "sinonimo": "Cumprir",
+    "explicacao": "Adimplir é cumprir uma obrigação, especialmente contratual.",
+    "categoria": "Direito civil",
+    "contexto": "Cumprimento de obrigação"
+  },
+  {
+    "id": "adimplemento",
+    "palavra": "Adimplemento",
+    "sinonimo": "Cumprimento",
+    "explicacao": "Adimplemento é o cumprimento de uma obrigação.",
+    "categoria": "Direito civil",
+    "contexto": "Obrigação cumprida"
+  },
+  {
+    "id": "adverso",
+    "palavra": "Adverso",
+    "sinonimo": "Contrário",
+    "explicacao": "Adverso é aquilo que se opõe ou é desfavorável.",
+    "categoria": "Termos gerais",
+    "contexto": "Oposição"
+  },
+  {
+    "id": "afiançar",
+    "palavra": "Afiançar",
+    "sinonimo": "Garantir",
+    "explicacao": "Afiançar é prestar fiança ou garantir uma obrigação, conforme o contexto.",
+    "categoria": "Direito civil",
+    "contexto": "Prestação de garantia"
+  },
+  {
+    "id": "alçada",
+    "palavra": "Alçada",
+    "sinonimo": "Competência",
+    "explicacao": "Alçada pode indicar limite de competência de órgão ou autoridade, conforme a área.",
+    "categoria": "Processo",
+    "contexto": "Limite de competência"
+  },
+  {
+    "id": "alienação",
+    "palavra": "Alienação",
+    "sinonimo": "Transferência",
+    "explicacao": "Alienação é a transferência de um bem ou direito a outra pessoa.",
+    "categoria": "Direito civil",
+    "contexto": "Transferência de bem ou direito"
+  },
+  {
+    "id": "alvitrar",
+    "palavra": "Alvitrar",
+    "sinonimo": "Sugerir",
+    "explicacao": "Alvitrar significa propor ou sugerir uma ideia ou medida.",
+    "categoria": "Termos gerais",
+    "contexto": "Proposta"
+  },
+  {
+    "id": "amparo",
+    "palavra": "Amparo",
+    "sinonimo": "Proteção",
+    "explicacao": "Amparo é proteção ou assistência oferecida a alguém ou a um direito.",
+    "categoria": "Termos gerais",
+    "contexto": "Proteção"
+  },
+  {
+    "id": "análogo",
+    "palavra": "Análogo",
+    "sinonimo": "Semelhante",
+    "explicacao": "Análogo é aquilo que apresenta semelhança com outra coisa.",
+    "categoria": "Termos gerais",
+    "contexto": "Semelhança"
+  },
+  {
+    "id": "anexar",
+    "palavra": "Anexar",
+    "sinonimo": "Juntar",
+    "explicacao": "Anexar é juntar um documento ou elemento a outro.",
+    "categoria": "Termos gerais",
+    "contexto": "Inclusão de documento"
+  },
+  {
+    "id": "antever",
+    "palavra": "Antever",
+    "sinonimo": "Prever",
+    "explicacao": "Antever é prever ou perceber antecipadamente algo.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Previsão"
+  },
+  {
+    "id": "apenso",
+    "palavra": "Apenso",
+    "sinonimo": "Anexado",
+    "explicacao": "Apenso é aquilo que foi juntado ou anexado a outro processo ou documento.",
+    "categoria": "Processo",
+    "contexto": "Documento ou processo vinculado"
+  },
+  {
+    "id": "arbitramento",
+    "palavra": "Arbitramento",
+    "sinonimo": "Avaliação",
+    "explicacao": "Arbitramento é a determinação ou avaliação de um valor por pessoa ou órgão competente.",
+    "categoria": "Processo",
+    "contexto": "Determinação de valor"
+  },
+  {
+    "id": "arguição",
+    "palavra": "Arguição",
+    "sinonimo": "Questionamento",
+    "explicacao": "Arguição é o ato de questionar ou suscitar formalmente uma questão.",
+    "categoria": "Processo",
+    "contexto": "Questão levantada"
+  },
+  {
+    "id": "arrolar",
+    "palavra": "Arrolar",
+    "sinonimo": "Enumerar",
+    "explicacao": "Arrolar é listar ou relacionar pessoas, bens ou itens.",
+    "categoria": "Processo",
+    "contexto": "Listagem"
+  },
+  {
+    "id": "assentimento",
+    "palavra": "Assentimento",
+    "sinonimo": "Consentimento",
+    "explicacao": "Assentimento é concordância ou aprovação dada a algo.",
+    "categoria": "Termos gerais",
+    "contexto": "Concordância"
+  },
+  {
+    "id": "atenuante",
+    "palavra": "Atenuante",
+    "sinonimo": "Redutor",
+    "explicacao": "Atenuante é circunstância que pode reduzir a gravidade ou consequência de uma conduta, conforme a lei.",
+    "categoria": "Direito penal",
+    "contexto": "Circunstância redutora"
+  },
+  {
+    "id": "auferir",
+    "palavra": "Auferir",
+    "sinonimo": "Obter",
+    "explicacao": "Auferir significa obter ou receber algo, como renda ou vantagem.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Obtenção"
+  },
+  {
+    "id": "averbar",
+    "palavra": "Averbar",
+    "sinonimo": "Registrar",
+    "explicacao": "Averbar é anotar ou registrar informação à margem de um registro ou documento.",
+    "categoria": "Registros",
+    "contexto": "Anotação registral"
+  },
+  {
+    "id": "avocar",
+    "palavra": "Avocar",
+    "sinonimo": "Chamar",
+    "explicacao": "Avocar é chamar para si uma atribuição ou processo nos casos permitidos.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Assunção de atribuição"
+  },
+  {
+    "id": "benesse",
+    "palavra": "Benesse",
+    "sinonimo": "Benefício",
+    "explicacao": "Benesse é uma vantagem ou benefício concedido.",
+    "categoria": "Termos gerais",
+    "contexto": "Vantagem"
+  },
+  {
+    "id": "bilateral",
+    "palavra": "Bilateral",
+    "sinonimo": "Recíproco",
+    "explicacao": "Bilateral é aquilo que envolve duas partes ou lados.",
+    "categoria": "Direito civil",
+    "contexto": "Duas partes"
+  },
+  {
+    "id": "caução",
+    "palavra": "Caução",
+    "sinonimo": "Garantia",
+    "explicacao": "Caução é uma garantia prestada para assegurar uma obrigação ou eventual reparação.",
+    "categoria": "Direito civil",
+    "contexto": "Garantia"
+  },
+  {
+    "id": "cessão",
+    "palavra": "Cessão",
+    "sinonimo": "Transferência",
+    "explicacao": "Cessão é a transferência de um direito ou posição jurídica, conforme as regras aplicáveis.",
+    "categoria": "Direito civil",
+    "contexto": "Transferência de direito"
+  },
+  {
+    "id": "coação",
+    "palavra": "Coação",
+    "sinonimo": "Constrangimento",
+    "explicacao": "Coação é pressão ou constrangimento que pode comprometer a liberdade de decisão.",
+    "categoria": "Direito civil",
+    "contexto": "Pressão indevida"
+  },
+  {
+    "id": "comprovação",
+    "palavra": "Comprovação",
+    "sinonimo": "Demonstração",
+    "explicacao": "Comprovação é a apresentação de elementos que demonstram algo.",
+    "categoria": "Processo",
+    "contexto": "Demonstração de fato"
+  },
+  {
+    "id": "convalidar",
+    "palavra": "Convalidar",
+    "sinonimo": "Validar",
+    "explicacao": "Convalidar é sanar um vício de um ato quando a lei permite, preservando sua validade.",
+    "categoria": "Termos gerais",
+    "contexto": "Correção de vício"
+  },
+  {
+    "id": "corroborar",
+    "palavra": "Corroborar",
+    "sinonimo": "Confirmar",
+    "explicacao": "Corroborar é reforçar ou confirmar uma afirmação com elementos adicionais.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Reforço de afirmação"
+  },
+  {
+    "id": "cumulação",
+    "palavra": "Cumulação",
+    "sinonimo": "Acumulação",
+    "explicacao": "Cumulação é a reunião de pedidos, funções ou elementos, conforme o contexto.",
+    "categoria": "Processo",
+    "contexto": "Reunião de elementos"
+  },
+  {
+    "id": "de cujus",
+    "palavra": "De cujus",
+    "sinonimo": "Falecido",
+    "explicacao": "De cujus é a pessoa falecida cuja sucessão está sendo tratada.",
+    "categoria": "Direito sucessório",
+    "contexto": "Pessoa falecida"
+  },
+  {
+    "id": "decisório",
+    "palavra": "Decisório",
+    "sinonimo": "Deliberativo",
+    "explicacao": "Decisório é aquilo relacionado à decisão ou ao ato de decidir.",
+    "categoria": "Termos gerais",
+    "contexto": "Relacionado à decisão"
+  },
+  {
+    "id": "declinar",
+    "palavra": "Declinar",
+    "sinonimo": "Renunciar",
+    "explicacao": "Declinar pode significar renunciar ou deixar de exercer algo; em competência, tem sentido técnico próprio.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Renúncia ou indicação de incompetência"
+  },
+  {
+    "id": "deduzir",
+    "palavra": "Deduzir",
+    "sinonimo": "Alegar",
+    "explicacao": "Em contexto processual, deduzir pode significar apresentar uma pretensão ou argumento.",
+    "categoria": "Processo",
+    "contexto": "Apresentação de pretensão"
+  },
+  {
+    "id": "deliberar",
+    "palavra": "Deliberar",
+    "sinonimo": "Decidir",
+    "explicacao": "Deliberar é discutir e decidir sobre uma questão.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Tomada de decisão"
+  },
+  {
+    "id": "demanda",
+    "palavra": "Demanda",
+    "sinonimo": "Ação",
+    "explicacao": "Demanda pode designar uma ação judicial ou uma pretensão levada a juízo.",
+    "categoria": "Processo",
+    "contexto": "Ação ou pretensão judicial"
+  },
+  {
+    "id": "denegar",
+    "palavra": "Denegar",
+    "sinonimo": "Negar",
+    "explicacao": "Denegar é negar ou recusar formalmente algo solicitado.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Negativa formal"
+  },
+  {
+    "id": "desídia",
+    "palavra": "Desídia",
+    "sinonimo": "Negligência",
+    "explicacao": "Desídia é falta de cuidado, zelo ou diligência no cumprimento de um dever.",
+    "categoria": "Termos gerais",
+    "contexto": "Falta de zelo"
+  },
+  {
+    "id": "desincumbir-se",
+    "palavra": "Desincumbir-se",
+    "sinonimo": "Cumprir",
+    "explicacao": "Desincumbir-se é cumprir uma tarefa ou encargo atribuído.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Cumprimento de encargo"
+  },
+  {
+    "id": "despacho",
+    "palavra": "Despacho",
+    "sinonimo": "Determinação",
+    "explicacao": "Despacho é ato de encaminhamento processual; o sentido exato depende do contexto.",
+    "categoria": "Processo",
+    "contexto": "Ato de encaminhamento"
+  },
+  {
+    "id": "dolo",
+    "palavra": "Dolo",
+    "sinonimo": "Intenção",
+    "explicacao": "Dolo envolve vontade consciente ou assunção de risco, conforme o ramo do direito e o contexto.",
+    "categoria": "Direito penal",
+    "contexto": "Elemento subjetivo"
+  },
+  {
+    "id": "emolumento",
+    "palavra": "Emolumento",
+    "sinonimo": "Taxa",
+    "explicacao": "Emolumento é valor cobrado por determinados serviços, especialmente registrais ou notariais; sua natureza depende da lei.",
+    "categoria": "Registros",
+    "contexto": "Valor por serviço"
+  },
+  {
+    "id": "encargo",
+    "palavra": "Encargo",
+    "sinonimo": "Ônus",
+    "explicacao": "Encargo é uma obrigação, tarefa ou responsabilidade atribuída a alguém.",
+    "categoria": "Termos gerais",
+    "contexto": "Responsabilidade"
+  },
+  {
+    "id": "enunciado",
+    "palavra": "Enunciado",
+    "sinonimo": "Declaração",
+    "explicacao": "Enunciado é uma formulação ou declaração de uma ideia, regra ou entendimento.",
+    "categoria": "Termos gerais",
+    "contexto": "Formulação"
+  },
+  {
+    "id": "equivalente",
+    "palavra": "Equivalente",
+    "sinonimo": "Correspondente",
+    "explicacao": "Equivalente é aquilo que tem valor, função ou significado correspondente em determinado contexto.",
+    "categoria": "Termos gerais",
+    "contexto": "Correspondência"
+  },
+  {
+    "id": "esbulho",
+    "palavra": "Esbulho",
+    "sinonimo": "Privação",
+    "explicacao": "Esbulho é a privação da posse de um bem, de modo juridicamente relevante.",
+    "categoria": "Direito civil",
+    "contexto": "Perda da posse"
+  },
+  {
+    "id": "exequível",
+    "palavra": "Exequível",
+    "sinonimo": "Executável",
+    "explicacao": "Exequível é aquilo que pode ser executado ou realizado.",
+    "categoria": "Termos gerais",
+    "contexto": "Possibilidade de execução"
+  },
+  {
+    "id": "exequente",
+    "palavra": "Exequente",
+    "sinonimo": "Credor",
+    "explicacao": "Exequente é quem promove uma execução judicial para obter satisfação de um direito.",
+    "categoria": "Processo",
+    "contexto": "Parte que promove execução"
+  },
+  {
+    "id": "exigibilidade",
+    "palavra": "Exigibilidade",
+    "sinonimo": "Possibilidade de cobrança",
+    "explicacao": "Exigibilidade é a qualidade de uma obrigação que já pode ser exigida, conforme os requisitos legais.",
+    "categoria": "Direito civil",
+    "contexto": "Obrigação exigível"
+  },
+  {
+    "id": "extinção",
+    "palavra": "Extinção",
+    "sinonimo": "Encerramento",
+    "explicacao": "Extinção é o término ou desaparecimento de uma relação, obrigação ou processo, conforme o contexto.",
+    "categoria": "Termos gerais",
+    "contexto": "Término"
+  },
+  {
+    "id": "fidedigno",
+    "palavra": "Fidedigno",
+    "sinonimo": "Confiável",
+    "explicacao": "Fidedigno é aquilo que merece confiança por ser considerado fiel ou confiável.",
+    "categoria": "Termos gerais",
+    "contexto": "Confiabilidade"
+  },
+  {
+    "id": "formalizar",
+    "palavra": "Formalizar",
+    "sinonimo": "Oficializar",
+    "explicacao": "Formalizar é dar forma ou registro oficial a um ato ou acordo.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Registro formal"
+  },
+  {
+    "id": "fruição",
+    "palavra": "Fruição",
+    "sinonimo": "Aproveitamento",
+    "explicacao": "Fruição é o uso ou aproveitamento de um bem ou direito; não se confunde necessariamente com usufruto.",
+    "categoria": "Direito civil",
+    "contexto": "Uso ou aproveitamento"
+  },
+  {
+    "id": "fundamentar",
+    "palavra": "Fundamentar",
+    "sinonimo": "Justificar",
+    "explicacao": "Fundamentar é apresentar razões ou bases que sustentem uma decisão ou argumento.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Apresentação de razões"
+  },
+  {
+    "id": "gravame",
+    "palavra": "Gravame",
+    "sinonimo": "Ônus",
+    "explicacao": "Gravame é um encargo ou restrição que recai sobre um bem ou direito.",
+    "categoria": "Direito civil",
+    "contexto": "Restrição sobre bem"
+  },
+  {
+    "id": "hipossuficiente",
+    "palavra": "Hipossuficiente",
+    "sinonimo": "Vulnerável",
+    "explicacao": "Hipossuficiente é quem apresenta insuficiência econômica ou técnica em determinado contexto jurídico.",
+    "categoria": "Termos gerais",
+    "contexto": "Insuficiência ou vulnerabilidade"
+  },
+  {
+    "id": "homologação",
+    "palavra": "Homologação",
+    "sinonimo": "Confirmação",
+    "explicacao": "Homologação é a aprovação ou confirmação formal por autoridade competente, quando prevista.",
+    "categoria": "Processo",
+    "contexto": "Aprovação formal"
+  },
+  {
+    "id": "imputação",
+    "palavra": "Imputação",
+    "sinonimo": "Atribuição",
+    "explicacao": "Imputação é a atribuição de um fato, responsabilidade ou conduta a alguém.",
+    "categoria": "Termos gerais",
+    "contexto": "Atribuição de responsabilidade"
+  },
+  {
+    "id": "inércia",
+    "palavra": "Inércia",
+    "sinonimo": "Inatividade",
+    "explicacao": "Inércia é a ausência de ação ou iniciativa; no processo, pode produzir efeitos previstos em lei.",
+    "categoria": "Termos gerais",
+    "contexto": "Ausência de ação"
+  },
+  {
+    "id": "infirmar",
+    "palavra": "Infirmar",
+    "sinonimo": "Refutar",
+    "explicacao": "Infirmar é enfraquecer, refutar ou retirar a força de uma afirmação ou argumento.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Refutação"
+  },
+  {
+    "id": "infringir",
+    "palavra": "Infringir",
+    "sinonimo": "Violar",
+    "explicacao": "Infringir é descumprir ou violar uma regra ou norma.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Violação de regra"
+  },
+  {
+    "id": "insubsistente",
+    "palavra": "Insubsistente",
+    "sinonimo": "Infundado",
+    "explicacao": "Insubsistente é aquilo que não se sustenta ou carece de base suficiente.",
+    "categoria": "Termos gerais",
+    "contexto": "Falta de sustentação"
+  },
+  {
+    "id": "interpor",
+    "palavra": "Interpor",
+    "sinonimo": "Apresentar",
+    "explicacao": "Interpor é apresentar formalmente um recurso ou medida processual.",
+    "categoria": "Processo",
+    "contexto": "Apresentação de recurso"
+  },
+  {
+    "id": "intempestivo",
+    "palavra": "Intempestivo",
+    "sinonimo": "Fora do prazo",
+    "explicacao": "Intempestivo é aquilo apresentado após o prazo aplicável.",
+    "categoria": "Processo",
+    "contexto": "Atraso processual"
+  },
+  {
+    "id": "irresignação",
+    "palavra": "Irresignação",
+    "sinonimo": "Inconformismo",
+    "explicacao": "Irresignação é a manifestação de inconformismo com uma decisão ou situação.",
+    "categoria": "Processo",
+    "contexto": "Inconformismo"
+  },
+  {
+    "id": "jurisdição",
+    "palavra": "Jurisdição",
+    "sinonimo": "Poder de julgar",
+    "explicacao": "Jurisdição é a função estatal de aplicar o direito e solucionar conflitos dentro dos limites legais.",
+    "categoria": "Processo",
+    "contexto": "Função jurisdicional"
+  },
+  {
+    "id": "jurisprudência",
+    "palavra": "Jurisprudência",
+    "sinonimo": "Entendimento judicial",
+    "explicacao": "Jurisprudência é o conjunto de decisões judiciais relevantes sobre determinadas questões.",
+    "categoria": "Termos gerais",
+    "contexto": "Conjunto de decisões"
+  },
+  {
+    "id": "lavrar",
+    "palavra": "Lavrar",
+    "sinonimo": "Redigir",
+    "explicacao": "Lavrar é redigir formalmente um documento ou termo oficial.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Redação formal"
+  },
+  {
+    "id": "litigância",
+    "palavra": "Litigância",
+    "sinonimo": "Atuação em juízo",
+    "explicacao": "Litigância é a atuação das partes em um processo judicial.",
+    "categoria": "Processo",
+    "contexto": "Atuação processual"
+  },
+  {
+    "id": "moratória",
+    "palavra": "Moratória",
+    "sinonimo": "Prorrogação",
+    "explicacao": "Moratória é a prorrogação ou suspensão temporária do prazo de pagamento de uma obrigação, quando cabível.",
+    "categoria": "Direito civil",
+    "contexto": "Prazo de pagamento"
+  },
+  {
+    "id": "nulidade",
+    "palavra": "Nulidade",
+    "sinonimo": "Invalidade",
+    "explicacao": "Nulidade é a condição de um ato que não produz os efeitos pretendidos por vício juridicamente relevante.",
+    "categoria": "Termos gerais",
+    "contexto": "Invalidade de ato"
+  },
+  {
+    "id": "obrigacional",
+    "palavra": "Obrigacional",
+    "sinonimo": "Relativo à obrigação",
+    "explicacao": "Obrigacional é aquilo relacionado a uma obrigação jurídica.",
+    "categoria": "Direito civil",
+    "contexto": "Relacionado a obrigação"
+  },
+  {
+    "id": "oponível",
+    "palavra": "Oponível",
+    "sinonimo": "Invocável",
+    "explicacao": "Oponível é aquilo que pode ser alegado ou produzir efeitos perante determinada pessoa ou situação.",
+    "categoria": "Termos gerais",
+    "contexto": "Possibilidade de invocação"
+  },
+  {
+    "id": "outrossim",
+    "palavra": "Outrossim",
+    "sinonimo": "Além disso",
+    "explicacao": "Outrossim é um advérbio formal que significa além disso ou igualmente.",
+    "categoria": "Termos gerais",
+    "contexto": "Adição de argumento"
+  },
+  {
+    "id": "peremptório",
+    "palavra": "Peremptório",
+    "sinonimo": "Categórico",
+    "explicacao": "Peremptório pode indicar algo categórico ou um prazo cujo decurso produz consequência processual específica.",
+    "categoria": "Processo",
+    "contexto": "Caráter categórico ou prazo"
+  },
+  {
+    "id": "perquirir",
+    "palavra": "Perquirir",
+    "sinonimo": "Investigar",
+    "explicacao": "Perquirir é investigar ou procurar esclarecer algo minuciosamente.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Investigação"
+  },
+  {
+    "id": "preclusão",
+    "palavra": "Preclusão",
+    "sinonimo": "Perda de faculdade processual",
+    "explicacao": "Preclusão é a perda da possibilidade de praticar determinado ato processual, nas hipóteses legais.",
+    "categoria": "Processo",
+    "contexto": "Perda de oportunidade processual"
+  },
+  {
+    "id": "prescindir",
+    "palavra": "Prescindir",
+    "sinonimo": "Dispensar",
+    "explicacao": "Prescindir é deixar de precisar ou dispensar algo.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Dispensa"
+  },
+  {
+    "id": "prevalecer",
+    "palavra": "Prevalecer",
+    "sinonimo": "Predominar",
+    "explicacao": "Prevalecer é ter prioridade, força ou aplicação sobre outra coisa no contexto considerado.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Predomínio"
+  },
+  {
+    "id": "procrastinar",
+    "palavra": "Procrastinar",
+    "sinonimo": "Adiar",
+    "explicacao": "Procrastinar é adiar ou postergar uma ação ou providência.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Adiamento"
+  },
+  {
+    "id": "prolação",
+    "palavra": "Prolação",
+    "sinonimo": "Emissão",
+    "explicacao": "Prolação é o ato de proferir ou emitir uma decisão judicial.",
+    "categoria": "Processo",
+    "contexto": "Emissão de decisão"
+  },
+  {
+    "id": "protelatório",
+    "palavra": "Protelatório",
+    "sinonimo": "Dilatador",
+    "explicacao": "Protelatório é aquilo que busca atrasar ou prolongar indevidamente um procedimento.",
+    "categoria": "Processo",
+    "contexto": "Atraso indevido"
+  },
+  {
+    "id": "quitação",
+    "palavra": "Quitação",
+    "sinonimo": "Pagamento confirmado",
+    "explicacao": "Quitação é a declaração de que uma obrigação foi satisfeita, total ou parcialmente, conforme o documento.",
+    "categoria": "Direito civil",
+    "contexto": "Confirmação de pagamento"
+  },
+  {
+    "id": "rechaçar",
+    "palavra": "Rechaçar",
+    "sinonimo": "Repelir",
+    "explicacao": "Rechaçar é rejeitar ou repelir uma alegação, pedido ou argumento.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Rejeição"
+  },
+  {
+    "id": "reiterar",
+    "palavra": "Reiterar",
+    "sinonimo": "Repetir",
+    "explicacao": "Reiterar é dizer ou fazer novamente, reforçando algo anteriormente apresentado.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Repetição"
+  },
+  {
+    "id": "remissão",
+    "palavra": "Remissão",
+    "sinonimo": "Perdão",
+    "explicacao": "Remissão pode significar perdão ou extinção de dívida, conforme o contexto jurídico.",
+    "categoria": "Direito civil",
+    "contexto": "Perdão de dívida"
+  },
+  {
+    "id": "renúncia",
+    "palavra": "Renúncia",
+    "sinonimo": "Abdicação",
+    "explicacao": "Renúncia é o ato de abrir mão de um direito ou faculdade, quando permitido.",
+    "categoria": "Termos gerais",
+    "contexto": "Abrir mão de direito"
+  },
+  {
+    "id": "reparação",
+    "palavra": "Reparação",
+    "sinonimo": "Compensação",
+    "explicacao": "Reparação é a recomposição ou compensação por um dano; indenização é uma forma comum de reparação.",
+    "categoria": "Direito civil",
+    "contexto": "Compensação por dano"
+  },
+  {
+    "id": "ressalva",
+    "palavra": "Ressalva",
+    "sinonimo": "Exceção",
+    "explicacao": "Ressalva é uma condição, restrição ou exceção expressamente indicada.",
+    "categoria": "Termos gerais",
+    "contexto": "Restrição ou exceção"
+  },
+  {
+    "id": "restabelecer",
+    "palavra": "Restabelecer",
+    "sinonimo": "Restaurar",
+    "explicacao": "Restabelecer é fazer voltar a uma condição anterior ou recuperar algo.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Retorno a estado anterior"
+  },
+  {
+    "id": "sub-rogação",
+    "palavra": "Sub-rogação",
+    "sinonimo": "Substituição",
+    "explicacao": "Sub-rogação é a substituição de uma pessoa ou coisa por outra em uma relação jurídica, nos termos legais.",
+    "categoria": "Direito civil",
+    "contexto": "Substituição jurídica"
+  },
+  {
+    "id": "sucumbência",
+    "palavra": "Sucumbência",
+    "sinonimo": "Derrota processual",
+    "explicacao": "Sucumbência é a situação de quem perde total ou parcialmente uma demanda e pode suportar encargos processuais.",
+    "categoria": "Processo",
+    "contexto": "Resultado desfavorável em processo"
+  },
+  {
+    "id": "subsidiário",
+    "palavra": "Subsidiário",
+    "sinonimo": "Complementar",
+    "explicacao": "Subsidiário é aquilo que atua como apoio ou se aplica na falta de regra principal, conforme o contexto.",
+    "categoria": "Termos gerais",
+    "contexto": "Aplicação complementar"
+  },
+  {
+    "id": "supressão",
+    "palavra": "Supressão",
+    "sinonimo": "Eliminação",
+    "explicacao": "Supressão é o ato de retirar ou eliminar algo.",
+    "categoria": "Termos gerais",
+    "contexto": "Retirada"
+  },
+  {
+    "id": "transigir",
+    "palavra": "Transigir",
+    "sinonimo": "Fazer acordo",
+    "explicacao": "Transigir é fazer concessões recíprocas para resolver uma controvérsia.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Composição amigável"
+  },
+  {
+    "id": "ulterior",
+    "palavra": "Ulterior",
+    "sinonimo": "Posterior",
+    "explicacao": "Ulterior é aquilo que ocorre depois ou em momento posterior.",
+    "categoria": "Termos gerais",
+    "contexto": "Posterioridade"
+  },
+  {
+    "id": "usucapião",
+    "palavra": "Usucapião",
+    "sinonimo": "Aquisição pela posse prolongada",
+    "explicacao": "Usucapião é forma de aquisição de propriedade ou direito real mediante requisitos legais e posse pelo prazo previsto.",
+    "categoria": "Direito civil",
+    "contexto": "Aquisição por posse"
+  },
+  {
+    "id": "vênia",
+    "palavra": "Vênia",
+    "sinonimo": "Licença",
+    "explicacao": "Vênia, em expressões formais, indica licença ou deferência ao apresentar uma divergência.",
+    "categoria": "Termos gerais",
+    "contexto": "Licença ou deferência"
+  },
+  {
+    "id": "vindicar",
+    "palavra": "Vindicar",
+    "sinonimo": "Reivindicar",
+    "explicacao": "Vindicar é reclamar ou reivindicar algo que se considera devido ou próprio.",
+    "categoria": "Verbos jurídicos",
+    "contexto": "Reclamação de direito"
+  },
+  {
+    "id": "volitivo",
+    "palavra": "Volitivo",
+    "sinonimo": "Relacionado à vontade",
+    "explicacao": "Volitivo é aquilo que se relaciona à vontade ou à intenção.",
+    "categoria": "Termos gerais",
+    "contexto": "Vontade"
+  }
+]

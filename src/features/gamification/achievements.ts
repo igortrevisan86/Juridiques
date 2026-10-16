@@ -33,6 +33,15 @@ export const ACHIEVEMENTS_DEFINITIONS: AchievementDefinition[] = [
     description: 'Estude por três dias consecutivos.',
     check: (progress: UserProgress) => progress.streak >= 3,
   },
+  {
+    id: 'first-vocab-lesson',
+    name: 'Primeira Palavra',
+    description: 'Conclua sua primeira lição de vocabulário.',
+    check: (progress: UserProgress) =>
+      Object.entries(progress.lessons).some(
+        ([id, l]) => id.startsWith('vocab-') && !!l.completedAt,
+      ),
+  },
 ]
 
 /**
@@ -47,7 +56,10 @@ export function recalculateAchievements(
   const updated = { ...progress.achievements }
 
   for (const def of ACHIEVEMENTS_DEFINITIONS) {
-    if (updated[def.id]?.unlockedAt !== null) continue // já desbloqueada
+    const current = updated[def.id]
+    // Pula apenas se já existe E está desbloqueada (conquistas novas em
+    // dados antigos chegam sem entrada e precisam poder ser desbloqueadas)
+    if (current && current.unlockedAt !== null) continue
     if (def.check(progress, trails, lessons)) {
       updated[def.id] = {
         id: def.id,

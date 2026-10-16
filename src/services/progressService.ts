@@ -3,11 +3,11 @@
 // Chave: juridiques.progress.v1
 // ============================================================
 
-import type { UserProgress } from '@/types'
+import type { UserProgress, VocabProgress, WordStat } from '@/types'
 import { ACHIEVEMENTS_DEFINITIONS } from '@/features/gamification/achievements'
 
 const STORAGE_KEY = 'juridiques.progress.v1'
-const CURRENT_VERSION = 1 as const
+const CURRENT_VERSION = 2 as const
 
 /** Estado inicial limpo */
 export function createInitialProgress(): UserProgress {
@@ -24,22 +24,80 @@ export function createInitialProgress(): UserProgress {
         { id: a.id, name: a.name, description: a.description, unlockedAt: null },
       ]),
     ),
+    vocab: { wrongWords: {}, wordStats: {} },
     updatedAt: Date.now(),
   }
 }
 
+/** Garante que toda conquista definida no código exista no registro salvo. */
+function withAchievementShells(
+  achievements: UserProgress['achievements'],
+): UserProgress['achievements'] {
+  const merged = { ...achievements }
+  for (const def of ACHIEVEMENTS_DEFINITIONS) {
+    if (!merged[def.id]) {
+      merged[def.id] = {
+        id: def.id,
+        name: def.name,
+        description: def.description,
+        unlockedAt: null,
+      }
+    }
+  }
+  return merged
+}
+
 /**
- * Valida se um objeto recuperado é um UserProgress válido.
+ * Migra um progresso v1 para v2 de forma retrocompatível:
+ * preserva XP, lições, conquistas e sequência; apenas acrescenta
+ * o campo `vocab` (vazio) e normaliza as conquistas.
+ */
+function migrateV1toV2(obj: Record<string, unknown>): UserProgress {
+  const achievements = (obj['achievements'] ?? {}) as UserProgress['achievements']
+  return {
+    version: 2,
+    xp: obj['xp'] as number,
+    lessons: obj['lessons'] as UserProgress['lessons'],
+    currentAttempt: (obj['currentAttempt'] ?? null) as UserProgress['currentAttempt'],
+    streak: obj['streak'] as number,
+    lastActivityDate: (obj['lastActivityDate'] ?? null) as string | null,
+    achievements: withAchievementShells(achievements),
+    vocab: { wrongWords: {}, wordStats: {} },
+    updatedAt: (obj['updatedAt'] as number) ?? Date.now(),
+  }
+}
+
+/** Normaliza um progresso já na versão 2 (preenche campos ausentes). */
+function normalizeV2(obj: Record<string, unknown>): UserProgress {
+  const vocab = (obj['vocab'] ?? {}) as Partial<VocabProgress>
+  const wordStats = (vocab.wordStats ?? {}) as Record<string, WordStat>
+  return {
+    ...(obj as unknown as UserProgress),
+    version: 2,
+    achievements: withAchievementShells(
+      (obj['achievements'] ?? {}) as UserProgress['achievements'],
+    ),
+    // Extensão retrocompatível: dados v2 antigos ganham wordStats vazio
+    // sem perder wrongWords, XP, lições ou conquistas.
+    vocab: { wrongWords: vocab.wrongWords ?? {}, wordStats },
+  }
+}
+
+/**
+ * Valida se um objeto recuperado é um UserProgress válido (v1 ou v2).
  * Retorna null se inválido ou de versão incompatível.
  */
 function validateProgress(raw: unknown): UserProgress | null {
   if (typeof raw !== 'object' || raw === null) return null
   const obj = raw as Record<string, unknown>
-  if (obj['version'] !== CURRENT_VERSION) return null
+  const version = obj['version']
+  if (version !== 1 && version !== 2) return null
   if (typeof obj['xp'] !== 'number') return null
   if (typeof obj['lessons'] !== 'object' || obj['lessons'] === null) return null
   if (typeof obj['streak'] !== 'number') return null
-  return raw as UserProgress
+  // Migração retrocompatível: v1 → v2 (nunca apaga dados)
+  if (version === 1) return migrateV1toV2(obj)
+  return normalizeV2(obj)
 }
 
 /** Indica se o localStorage está disponível */

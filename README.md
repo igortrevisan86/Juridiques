@@ -1,8 +1,22 @@
 # Juridiquês 📚⚖️
 
-**Aprenda Direito de forma gamificada.**
+**Aprenda vocabulário jurídico de forma gamificada.**
 
-Aplicação web educacional para estudantes de Direito, com trilhas de aprendizagem, exercícios interativos e sistema de gamificação.
+Aplicação web educacional para estudantes de Direito, com **lições de vocabulário por sinônimos** como experiência principal, trilhas complementares sobre as áreas do Direito, exercícios interativos e sistema de gamificação.
+
+---
+
+## Experiência principal — aprender palavras
+
+- **Lição de vocabulário**: cada questão mostra uma palavra jurídica e quatro alternativas; escolha o sinônimo correto, confirme e receba feedback visual de acerto ou erro com a mini-explicação do termo.
+- **15 lições de vocabulário organizadas em 3 unidades** (5 lições cada), alimentadas por `src/content/palavras.json` — fonte única do vocabulário com **152 termos** (150 em lições + 2 reservados para expansão editorial).
+- **Caminho de aprendizagem** na home: cartão principal (continuar de onde parou / ver todas as trilhas), caminho visual por unidade (concluída ✓ verde, atual roxo com CTA Iniciar/Continuar, bloqueada com cadeado) e coluna lateral com nível, progresso geral, XP, sequência e revisão.
+- **Revisão** (`/revisao`): palavras respondidas incorretamente entram automaticamente na lista; acertá-las em uma sessão de revisão as remove. Uma palavra só é considerada **dominada** após acerto na lição e, se já errou, acerto na revisão — rastreado em `vocab.wordStats`.
+- **Desbloqueio progressivo** entre lições, XP por conclusão e conquistas — os mesmos mecanismos das trilhas clássicas.
+
+## Conteúdo complementar — Explorar o Direito
+
+As trilhas originais sobre as áreas do Direito (Introdução, Civil e Constitucional) continuam completas e acessíveis na home, com seu conteúdo teórico, exemplos práticos e referências preservados.
 
 ---
 
@@ -80,13 +94,14 @@ src/
   components/
     ui/                → Componentes de interface genéricos
     layout/            → Layout, navegação global
-    learning/          → Componentes de aprendizagem
-  pages/               → Páginas (Home, Trail, Lesson, Result)
+    learning/          → Componentes de aprendizagem (QuestionView, LessonNode, TrailCard, UnitPath)
+  pages/               → Home, Trail, Lesson, Result + Vocab, VocabLesson, Review
   features/
     learning/          → Lógica de exercícios e questões
     progress/          → Contexto e estado de progresso
     gamification/      → XP, níveis, conquistas
-  content/             → Trilhas, lições e questões (TypeScript estático)
+    vocab/             → Catálogo (palavras.json), gerador de questões de sinônimos e regras de dominação (mastery)
+  content/             → Trilhas/lições (TypeScript estático) + palavras.json
   services/            → progressService.ts (localStorage)
   hooks/               → Hooks reutilizáveis
   types/               → Tipos TypeScript centrais
@@ -100,7 +115,20 @@ src/
 
 ## Conteúdo
 
-**3 trilhas, 15 lições, 75 questões:**
+**Vocabulário: 152 termos em 15 lições organizadas em 3 unidades + revisão**, carregados de `src/content/palavras.json`
+(cada item tem `id`, `palavra`, `sinonimo`, `explicacao`, `categoria`, `contexto`).
+As questões são geradas em tempo de execução com semente determinística por tentativa:
+resposta correta = `sinonimo`; distratores priorizam a mesma categoria e excluem duplicatas e radicais em comum. Termos sem 3 distratores adequados são omitidos e registrados para revisão editorial (`getCatalogIssues()`). Dois termos excedentes (152 = 15 × 10 + 2) são registrados por `getUnusedWordIds()` — nada é descartado nem duplicado.
+
+**Unidades do vocabulário** (derivadas dos dados):
+
+| Unidade | Lições |
+|---|---|
+| Termos essenciais | 5 lições (vocab-lesson-1..5) |
+| Processo e procedimentos | 5 lições (vocab-lesson-6..10) |
+| Direitos e obrigações | 5 lições (vocab-lesson-11..15) |
+
+**Trilhas complementares — 3 trilhas, 15 lições, 75 questões (preservadas):**
 
 | Trilha | Lições |
 |---|---|
@@ -112,17 +140,20 @@ src/
 
 ## Gamificação
 
-- **XP**: 25 pontos por primeira conclusão de cada lição.
-- **Níveis**: 7 níveis (Iniciante → Jurisconsulto), calculados deterministicamente pelo XP.
+- **XP**: 25 pontos por primeira conclusão de cada lição (lições de vocabulário incluídas); refazer não concede XP novo.
+- **Níveis**: 7 títulos (Aprendiz → Estudioso → Avançado → Especialista → Bacharel → Mestre → Jurisconsulto), com os mesmos limiares de XP do sistema anterior — ninguém perde nível com a atualização. A pontuação de nível soma XP + 25 pontos por palavra dominada; a interface exibe o título, palavras dominadas, meta da próxima etapa e barra de progresso.
 - **Sequência diária**: registrada no fuso `America/Sao_Paulo`.
-- **Conquistas**: Primeira Lição, Cinco Lições, Trilha Completa, Três Dias Seguidos.
-- **Desbloqueio**: cada lição requer a conclusão da anterior na mesma trilha.
+- **Conquistas**: Primeira Lição, Cinco Lições, Trilha Completa, Três Dias Seguidos e Primeira Palavra (vocabulário).
+- **Desbloqueio**: cada lição requer a conclusão da anterior (trilhas e vocabulário).
+- **Revisão e dominação**: erro em palavra de vocabulário marca para revisão (`wrongWords`); acerto em sessão de revisão remove a marca. Uma palavra é dominada com acerto na lição e, se já errou, acerto na revisão — rastreado em `vocab.wordStats` (adicionado retrocompatívelmente, sem apagar dados existentes).
 
 ---
 
 ## Progresso local
 
-O progresso é salvo automaticamente no `localStorage` com a chave `juridiques.progress.v1`.
+O progresso é salvo automaticamente no `localStorage` com a chave `juridiques.progress.v1`
+(o formato interno evoluiu para a versão 2 — dados salvos na versão 1 são migrados
+automaticamente ao carregar, preservando XP, lições, conquistas e sequência; nada é apagado).
 
 > ⚠️ O progresso é local. Limpar os dados do navegador ou usar outro dispositivo apagará o progresso. Não há backup, exportação ou importação.
 

@@ -77,14 +77,89 @@ export interface Achievement {
   unlockedAt: number | null
 }
 
+// ------ Vocabulário ------
+
+/** Termo de vocabulário — corresponde a um item de src/content/palavras.json */
+export interface Palavra {
+  id: string
+  palavra: string
+  sinonimo: string
+  explicacao: string
+  categoria: string
+  contexto: string
+}
+
+/** Lição de vocabulário — agrupamento de termos por categoria */
+export interface VocabLesson {
+  id: string
+  order: number
+  /** Unidade temática à qual a lição pertence (vocab-unit-N) */
+  unitId?: string
+  title: string
+  description: string
+  wordIds: string[]
+}
+
+/** Unidade temática — grupo de lições exibido no caminho de aprendizagem */
+export interface VocabUnit {
+  id: string
+  order: number
+  title: string
+  description: string
+  lessonIds: string[]
+}
+
+/** Questão de vocabulário: associação palavra → sinônimo (4 alternativas) */
+export interface VocabSynonymQuestion {
+  id: string
+  wordId: string
+  stem: string
+  options: QuestionOption[]
+  correctOptionId: string
+  expectedSynonym: string
+  explanation: string
+}
+
+/** Palavra marcada para revisão (erro ou reforço) */
+export interface ReviewWordEntry {
+  wordId: string
+  timesWrong: number
+  lastWrongAt: number
+}
+
+/**
+ * Estatística de uma palavra para cálculo de dominação.
+ * Regra: dominada = acertou em lição E, se já errou, acertou a revisão.
+ */
+export interface WordStat {
+  wordId: string
+  lessonCorrect: boolean
+  reviewCorrect: boolean
+  masteredAt: number | null
+}
+
+/** Progresso de vocabulário (adicionado na versão 2 do armazenamento) */
+export interface VocabProgress {
+  /** wordId → entrada de revisão. Histórico único de erros de vocabulário. */
+  wrongWords: Record<string, ReviewWordEntry>
+  /**
+   * wordId → estatísticas de acerto/dominação.
+   * Campo adicionado retrocompativelmente: dados v2 antigos são normalizados
+   * no carregamento com `wordStats: {}` sem apagar nada.
+   */
+  wordStats: Record<string, WordStat>
+}
+
 export interface UserProgress {
-  version: 1
+  version: 1 | 2
   xp: number
   lessons: Record<string, LessonProgress>
   currentAttempt: LessonAttempt | null
   streak: number
   lastActivityDate: string | null // YYYY-MM-DD
   achievements: Record<string, Achievement>
+  /** Presente a partir da versão 2 (migrado automaticamente da v1) */
+  vocab: VocabProgress
   updatedAt: number
 }
 

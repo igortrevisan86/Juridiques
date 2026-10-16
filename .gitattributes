@@ -1,0 +1,4 @@
+# Batch files do Windows exigem fim de linha CRLF e ASCII puro
+# para que o cmd.exe parseie blocos if (...) corretamente.
+*.bat text eol=crlf
+*.cmd text eol=crlf

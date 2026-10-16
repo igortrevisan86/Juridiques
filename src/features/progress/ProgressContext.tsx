@@ -2,13 +2,12 @@
 // CONTEXTO DE PROGRESSO — Juridiquês
 // ============================================================
 
-import React, { createContext, useCallback, useEffect, useRef, useState } from 'react'
-import type { UserProgress, LessonAttempt, LessonProgress } from '@/types'
+import React, { createContext, useCallback, useEffect, useState } from 'react'
+import type { UserProgress, LessonAttempt, LessonProgress, WordStat } from '@/types'
 import {
   loadProgress,
   saveProgress,
   resetProgress as resetProgressStorage,
-  createInitialProgress,
 } from '@/services/progressService'
 import { recalculateAchievements } from '@/features/gamification/achievements'
 import { computeNewStreak, getTodayDateString, hasActivityToday } from '@/utils/streak'
@@ -24,6 +23,11 @@ export interface ProgressContextValue {
   answerQuestion: (questionId: string, optionId: string) => void
   /** Finaliza a tentativa atual e aplica recompensas */
   completeLesson: (score: number, totalQuestions: number) => void
+  /**
+   * Registra o resultado de uma palavra de vocabulário.
+   * Erro → marca para revisão; acerto em sessão de revisão → remove da revisão.
+   */
+  recordVocabAnswer: (wordId: string, correct: boolean, fromReview: boolean) => void
   /** Reinicia todo o progresso (chamar apenas após confirmação) */
   resetAllProgress: () => void
 }
@@ -31,22 +35,14 @@ export interface ProgressContextValue {
 export const ProgressContext = createContext<ProgressContextValue | null>(null)
 
 export function ProgressProvider({ children }: { children: React.ReactNode }) {
-  const [progress, setProgress] = useState<UserProgress>(createInitialProgress)
-  const [storageAvailable, setStorageAvailable] = useState(true)
-  const initialized = useRef(false)
-
-  // Carrega o progresso salvo na montagem
-  useEffect(() => {
-    if (initialized.current) return
-    initialized.current = true
-    const { progress: saved, storageAvailable: available } = loadProgress()
-    setProgress(saved)
-    setStorageAvailable(available)
-  }, [])
+  // Carrega o progresso salvo de forma síncrona na primeira renderização.
+  // Evita que páginas montem sem tentativa/recuperações (retoma de quiz).
+  const [initial] = useState(loadProgress)
+  const [progress, setProgress] = useState<UserProgress>(initial.progress)
+  const [storageAvailable] = useState(initial.storageAvailable)
 
   // Salva automaticamente quando o progresso muda
   useEffect(() => {
-    if (!initialized.current) return
     saveProgress(progress)
   }, [progress])
 
@@ -146,6 +142,49 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     [updateProgress],
   )
 
+  const recordVocabAnswer = useCallback(
+    (wordId: string, correct: boolean, fromReview: boolean) => {
+      updateProgress((prev) => {
+        const wrongWords = { ...prev.vocab.wrongWords }
+        const wordStats = { ...prev.vocab.wordStats }
+        const now = Date.now()
+        const stat: WordStat = wordStats[wordId] ?? {
+          wordId,
+          lessonCorrect: false,
+          reviewCorrect: false,
+          masteredAt: null,
+        }
+
+        if (!correct) {
+          // Erro → entra na fila de revisão e perde a dominação imediata
+          wrongWords[wordId] = {
+            wordId,
+            timesWrong: (wrongWords[wordId]?.timesWrong ?? 0) + 1,
+            lastWrongAt: now,
+          }
+          wordStats[wordId] = { ...stat, masteredAt: null }
+        } else {
+          const updated: WordStat = fromReview
+            ? // Acerto em revisão → sai da fila (se estava) e conta como revisão
+              { ...stat, reviewCorrect: true }
+            : // Acerto em lição → marca o acerto da lição
+              { ...stat, lessonCorrect: true }
+
+          if (fromReview) delete wrongWords[wordId]
+
+          // Regra de dominação: acertou em lição E não está pendente na revisão
+          wordStats[wordId] =
+            updated.lessonCorrect && !(wordId in wrongWords)
+              ? { ...updated, masteredAt: updated.masteredAt ?? now }
+              : { ...updated, masteredAt: null }
+        }
+
+        return { ...prev, vocab: { ...prev.vocab, wrongWords, wordStats } }
+      })
+    },
+    [updateProgress],
+  )
+
   const resetAllProgress = useCallback(() => {
     const fresh = resetProgressStorage()
     setProgress(fresh)
@@ -157,6 +196,7 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     startAttempt,
     answerQuestion,
     completeLesson,
+    recordVocabAnswer,
     resetAllProgress,
   }
 
